@@ -13,7 +13,12 @@
  try{
   const t=(await (await fetch(`${C.WOMPI_API}/transactions/${encodeURIComponent(id)}`)).json()).data;
   if(t.status==="APPROVED"){
-   const pdf=String(t.reference).startsWith("DM-R-")?`<p><a class="btn alt" href="${C.RECETARIO_PDF_URL}" target="_blank" rel="noopener">📥 Descargar recetario (PDF)</a></p>`:"";
+   let pdf="";
+   if(String(t.reference).startsWith("DM-R-")){
+    try{const d=await (await fetch("/api/descarga?id="+encodeURIComponent(id))).json();
+     pdf=d.url?`<p><a class="btn alt" href="${d.url}" target="_blank" rel="noopener">📥 Descargar recetario (PDF)</a></p>`:"<p>Escríbenos y te enviamos el recetario.</p>";}
+    catch(e){pdf="<p>Escríbenos y te enviamos el recetario.</p>";}
+   }
    show("¡Pago aprobado! 🎉",`<p>Gracias por tu compra. Referencia: ${t.reference}</p>${pdf}<p>Escríbenos por Instagram para coordinar tus bolis.</p>`);
   }else if(t.status==="PENDING")show("Pago pendiente ⏳","<p>Recarga esta página en unos minutos.</p>");
   else show("El pago no fue aprobado","<p>Puedes intentarlo de nuevo desde la tienda.</p>");

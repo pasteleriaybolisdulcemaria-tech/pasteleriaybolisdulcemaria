@@ -6,16 +6,18 @@ Sitio estático (HTML/CSS/JS) listo para GitHub + Vercel. Incluye carrito solo p
 ```
 assets/img/logo.jpg · mascota.jpg · favicon.png · pattern.svg
 assets/img/donas.jpg · bolis.jpg
-assets/img/tortas/torta-1.jpg … torta-8.jpg
+assets/img/tortas/torta-1.jpg … torta-10.jpg
+assets/img/cupcakes.jpg · flan.jpg · bolis-1.jpg … bolis-5.jpg
 ```
-Las fotos de tortas ya están recortadas por abajo para ocultar el número de WhatsApp. Si agregas más, recórtalas igual antes de subirlas y añade su número en la lista `[1,2,3,4,5,6,7,8]` de `assets/js/app.js`.
+Las fotos de tortas ya están recortadas por abajo para ocultar el número de WhatsApp. Si agregas más, recórtalas igual antes de subirlas y añade su número en la lista `[1,2,3,4,5,6,7,8,9,10]` de `assets/js/app.js`.
 
 ## 2. Configurar
-Edita `assets/js/config.js`: llave pública de Wompi, URL del PDF y enlace de cotización. En `index.html` busca los comentarios `CONFIRMAR` y verifica cuál Facebook es de cada línea.
+Edita `assets/js/config.js`: llave pública de Wompi y enlace de cotización. El enlace del PDF NO va en el código: se guarda en Vercel como variable `RECETARIO_PDF_URL` (ver Wompi, paso 2). En `index.html` busca los comentarios `CONFIRMAR` y verifica cuál Facebook es de cada línea.
 
 ## 3. Wompi
 1. En el panel de Wompi (Desarrolladores) copia tu **Llave pública** → `WOMPI_PUBLIC_KEY`.
-2. Copia tu **Secreto de integridad** → en Vercel: *Settings → Environment Variables* → `WOMPI_INTEGRITY_SECRET` (nunca lo pongas en el código).
+2. En Vercel agrega también `RECETARIO_PDF_URL` con el enlace de tu PDF (en Drive: *Compartir → Cualquier persona con el enlace*). Solo se entrega tras un pago aprobado.
+2b. Copia tu **Secreto de integridad** → en Vercel: *Settings → Environment Variables* → `WOMPI_INTEGRITY_SECRET` (nunca lo pongas en el código).
 3. En Wompi registra la URL de eventos/redirección si te la piden: `https://TU-DOMINIO.vercel.app/gracias.html`.
 4. Prueba primero con llaves `pub_test_…` y cambia `WOMPI_API` a `https://sandbox.wompi.co/v1`.
 
