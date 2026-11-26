@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gracias — Dulce María</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css"></head>
+<body><main class="wrap"><div class="card promo" id="box"><h2>Verificando tu pago…</h2></div></main>
+<script src="assets/js/config.js"></script>
+<script>
+(async()=>{
+ const C=window.CONFIG,box=document.getElementById("box"),id=new URLSearchParams(location.search).get("id");
+ const show=(h,b)=>box.innerHTML=`<h2>${h}</h2>${b}<a class="btn" href="/">Volver al inicio</a>`;
+ if(!id)return show("Hola 💕","<p>No encontramos información de pago.</p>");
+ try{
+  const t=(await (await fetch(`${C.WOMPI_API}/transactions/${encodeURIComponent(id)}`)).json()).data;
+  if(t.status==="APPROVED"){
+   const pdf=String(t.reference).startsWith("DM-R-")?`<p><a class="btn alt" href="${C.RECETARIO_PDF_URL}" target="_blank" rel="noopener">📥 Descargar recetario (PDF)</a></p>`:"";
+   show("¡Pago aprobado! 🎉",`<p>Gracias por tu compra. Referencia: ${t.reference}</p>${pdf}<p>Escríbenos por Instagram para coordinar tus bolis.</p>`);
+  }else if(t.status==="PENDING")show("Pago pendiente ⏳","<p>Recarga esta página en unos minutos.</p>");
+  else show("El pago no fue aprobado","<p>Puedes intentarlo de nuevo desde la tienda.</p>");
+ }catch(e){show("No pudimos verificar el pago","<p>Escríbenos y lo revisamos contigo.</p>");}
+})();
+</script></body></html>

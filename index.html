@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dulce María — Pastelería y Bolis Gourmet</title>
+<meta name="description" content="Tortas personalizadas, repostería y bolis gourmet hechos con amor. Dulce María, Colombia.">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<meta property="og:image" content="assets/img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script src="https://checkout.wompi.co/widget.js"></script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#inicio"><img src="assets/img/favicon.png" alt=""><span>Dulce María</span></a>
+  <nav>
+    <a href="#tortas">Tortas</a><a href="#reposteria">Repostería</a><a href="#bolis">Bolis</a><a href="#recetario">Recetario</a><a href="#redes">Redes</a>
+  </nav>
+  <button id="openCart" class="cartbtn" aria-label="Abrir carrito">🛒 <b id="cartCount">0</b></button>
+</header>
+
+<main>
+<section id="inicio" class="hero wrap">
+  <div>
+    <p class="eyebrow">Pastelería y Bolis Gourmet</p>
+    <h1>Dulce María</h1>
+    <p class="lead">Tortas personalizadas, repostería y bolis gourmet hechos con mucho amor. 💕</p>
+    <div class="row">
+      <a class="btn" href="#tortas">Ver tortas</a>
+      <a class="btn alt" href="#bolis">Pedir bolis</a>
+    </div>
+  </div>
+  <img class="mascot" src="assets/img/mascota.jpg" alt="Muñequita pastelera de Dulce María" onerror="this.outerHTML='<div class=&quot;mascot ph&quot;>🧁</div>'">
+</section>
+
+<section id="tortas" class="wrap">
+  <h2>Tortas Personalizadas</h2>
+  <p class="note">🎨 Cada diseño es personalizado: cuéntanos tu idea y la hacemos realidad.</p>
+  <div id="gridTortas" class="grid"></div>
+  <h3>Galería de tortas</h3>
+  <div id="gallery" class="gallery"></div>
+</section>
+
+<section id="reposteria" class="wrap">
+  <h2>Repostería y Pasabocas</h2>
+  <img class="banner" src="assets/img/donas.jpg" alt="Mini donas decoradas en rosa y celeste" loading="lazy">
+  <div id="gridRepo" class="grid"></div>
+</section>
+
+<section id="bolis" class="wrap">
+  <h2>Bolis Gourmet</h2>
+  <div class="card boli">
+    <img class="bolipic" src="assets/img/bolis.jpg" alt="Bolis gourmet de varios sabores en balde lila" loading="lazy">
+    <div>
+      <h3>Boli Gourmet</h3>
+      <p class="price">$4.000 COP <small>c/u</small></p>
+      <div class="qty"><button data-q="boli" data-d="-1">−</button><span id="qBoli">1</span><button data-q="boli" data-d="1">+</button></div>
+      <button class="btn" id="addBoli">Agregar al carrito</button>
+    </div>
+  </div>
+</section>
+
+<section id="recetario" class="wrap">
+  <div class="card promo">
+    <p class="fire">🔥 ¡OFERTA IMPERDIBLE! 🔥</p>
+    <p>📝 Aprende a preparar los bolis más vendidos con el recetario digital de Bolis Gourmet Dulce María.</p>
+    <p>💕 Incluye recetas, ideas para emprender y acompañamiento para resolver tus dudas.</p>
+    <p>💥 ¡HOY POR SOLO!</p>
+    <p class="price">🇨🇴 $20.000 COP</p>
+    <p class="price">🇺🇸 US$5.50</p>
+    <p>✨ ¡Aprovecha este descuentazo y comienza tu emprendimiento!</p>
+    <button class="btn" id="addReceta">Comprar recetario (PDF)</button>
+    <small>El cobro se procesa en COP con Wompi. Al confirmar el pago recibes el enlace de descarga.</small>
+  </div>
+</section>
+
+<section id="redes" class="wrap">
+  <h2>Nuestras redes</h2>
+  <div class="social">
+    <div class="card"><h3>🧁 Pastelería</h3>
+      <a class="btn" target="_blank" rel="noopener" href="https://www.tiktok.com/@pasteleriadulcemaria?_r=1&_t=ZS-9BhiTbRcHqM">TikTok Pastelería</a>
+      <a class="btn" target="_blank" rel="noopener" href="https://www.instagram.com/pasteleriadulcemaria?fqnt=NDZ4czl4NmhrNXNt">Instagram Pastelería</a>
+      <!-- CONFIRMAR: ¿este enlace de Facebook es el de Pastelería o el de Bolis? -->
+      <a class="btn" target="_blank" rel="noopener" href="https://www.facebook.com/share/1DcXcNDXVV/">Facebook Pastelería</a>
+    </div>
+    <div class="card"><h3>🍧 Bolis Gourmet</h3>
+      <a class="btn alt" target="_blank" rel="noopener" href="https://www.instagram.com/bolisgourmetdulcemaria?hvrq=cXZ2MmhpNmd5Mmlz">Instagram Bolis Gourmet</a>
+      <!-- CONFIRMAR: ¿este enlace de Facebook es el de Bolis o el de Pastelería? -->
+      <a class="btn alt" target="_blank" rel="noopener" href="https://www.facebook.com/share/19kg9kQpsn/">Facebook Bolis Gourmet</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><img class="flogo" src="assets/img/logo.jpg" alt="Dulce María, Pastelería y Bolis Gourmet" loading="lazy"><p>© <span id="yr"></span> Dulce María — Pastelería y Bolis Gourmet · Hecho con 💕</p></footer>
+
+<aside id="drawer" class="drawer" aria-hidden="true">
+  <div class="dh"><h3>Tu carrito</h3><button id="closeCart" aria-label="Cerrar">✕</button></div>
+  <ul id="cartList"></ul>
+  <p class="total">Total: <b id="cartTotal">$0 COP</b></p>
+  <button class="btn" id="checkout">Pagar con Wompi</button>
+</aside>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
